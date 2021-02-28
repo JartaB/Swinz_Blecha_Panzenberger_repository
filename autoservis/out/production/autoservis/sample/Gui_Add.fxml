@@ -22,6 +22,7 @@
                   <ChoiceBox fx:id="cas_choice" layoutX="14.0" layoutY="106.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="zavada_choice" layoutX="14.0" layoutY="151.0" prefWidth="150.0" />
                   <DatePicker layoutX="392.0" layoutY="49.0" prefHeight="96.0" prefWidth="174.0" promptText="Datum" />
+                  <Button layoutX="479.0" layoutY="294.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Objednat" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
                </children>
             </AnchorPane>
         </items>
