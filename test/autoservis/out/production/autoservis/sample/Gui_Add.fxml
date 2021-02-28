@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <SplitPane dividerPositions="0.11055276381909548" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="200.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button alignment="CENTER" layoutX="200.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" prefWidth="200.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="name_field" layoutX="14.0" layoutY="57.0" promptText="Jméno a příjmení" />
+                  <TextField fx:id="spz_field" layoutX="14.0" layoutY="208.0" promptText="SPZ" />
+                  <TextField fx:id="phone_field" layoutX="14.0" layoutY="250.0" promptText="Telefon" />
+                  <ChoiceBox fx:id="cas_choice" layoutX="14.0" layoutY="106.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="zavada_choice" layoutX="14.0" layoutY="151.0" prefWidth="150.0" />
+                  <DatePicker fx:id="date_picker" layoutX="392.0" layoutY="49.0" prefHeight="96.0" prefWidth="174.0" promptText="Datum" />
+                  <Button fx:id="obj_button" layoutX="479.0" layoutY="294.0" mnemonicParsing="false" onAction="#insertNewCustomer" prefHeight="50.0" prefWidth="120.0" text="Objednat" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>
