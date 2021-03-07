@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiHomePack.HomeController">
+    <children>
+        <SplitPane dividerPositions="0.11055276381909548" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="598.0">
+                    <children>
+                        <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="43.0" prefWidth="200.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button alignment="CENTER" layoutX="200.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToList" prefHeight="25.0" prefWidth="200.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" prefWidth="200.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="299.0" layoutY="35.0" prefHeight="282.0" prefWidth="262.0" text="Donec ac odio nec felis sollicitudin rhoncus vel sit amet justo. Sed a sodales augue. Maecenas ultrices justo eu diam vestibulum tempus. Ut rutrum risus ac condimentum cursus. In mi nulla, commodo vitae nisl vitae, elementum placerat orci. In quis tempor urna. Nulla ac lorem enim. Nullam efficitur vulputate eros, nec sollicitudin erat porttitor eu. Donec imperdiet, arcu vel luctus maximus, quam ex tincidunt lorem, sit amet eleifend lectus enim quis lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus." wrapText="true" />
+                  <ImageView fitHeight="204.0" fitWidth="200.0" layoutX="42.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</Pane>

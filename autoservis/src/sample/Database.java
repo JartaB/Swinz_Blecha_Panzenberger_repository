@@ -1,5 +1,7 @@
 package sample;
 
+import guiListPack.DatAlertBox;
+
 import java.sql.*;
 
 public class Database {
@@ -21,7 +23,7 @@ public class Database {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
                 String datetime = resultSet.getString(3);
-                int phone = resultSet.getInt(4);
+                String phone = resultSet.getString(4);
                 String spz = resultSet.getString(5);
                 String typeOfProblem = resultSet.getString(6);
 
@@ -29,10 +31,31 @@ public class Database {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            DatAlertBox.display("Chyba","Nepodařilo se připojit k databázi");
         }
         catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    public void insert(int id,String name,String datetime,String phone,String spz,String typeOfProblem){
+        try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connect = DriverManager.getConnection(url,user,pass);
+        statement = connect.createStatement();
+        PreparedStatement post = connect.prepareStatement("INSERT INTO objednani (id, name, date, phone, spz, typeofproblem) " +
+                " VALUES ('"+id+"', '"+name+"','"+datetime+"','"+phone+"','"+spz+"','"+typeOfProblem+"')");
+        post.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            DatAlertBox.display("Chyba","Nepodařilo se připojit k databázi");
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static Connection getConnection() throws SQLException {
+        Connection connection = DriverManager.getConnection(url,user,pass);
+        return connection;
     }
     }
 
