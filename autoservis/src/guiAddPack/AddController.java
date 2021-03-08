@@ -66,13 +66,12 @@ public class AddController implements Initializable {
         zavada_choice.getItems().add("Karoserie");
     }
     public void insertNewCustomer(){
-        int id=3;
         String name =name_field.getCharacters().toString();
         String datetime=date_picker.getValue().toString() + " " +cas_choice.getValue().toString();
         String typeOfProblem=zavada_choice.getValue().toString();
         String spz=spz_field.getCharacters().toString();
         String phone=phone_field.getCharacters().toString();
-        database.insert(id,name,datetime,phone,spz,typeOfProblem);
+        database.insert(name,datetime,phone,spz,typeOfProblem);
     }
 
     public void switchToList(ActionEvent event) throws IOException {

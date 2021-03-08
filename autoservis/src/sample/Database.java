@@ -37,13 +37,13 @@ public class Database {
             e.printStackTrace();
         }
     }
-    public void insert(int id,String name,String datetime,String phone,String spz,String typeOfProblem){
+    public void insert(String name,String datetime,String phone,String spz,String typeOfProblem){
         try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         connect = DriverManager.getConnection(url,user,pass);
         statement = connect.createStatement();
-        PreparedStatement post = connect.prepareStatement("INSERT INTO objednani (id, name, date, phone, spz, typeofproblem) " +
-                " VALUES ('"+id+"', '"+name+"','"+datetime+"','"+phone+"','"+spz+"','"+typeOfProblem+"')");
+        PreparedStatement post = connect.prepareStatement("INSERT INTO objednani (name, date, phone, spz, typeofproblem) " +
+                " VALUES ('"+name+"','"+datetime+"','"+phone+"','"+spz+"','"+typeOfProblem+"')");
         post.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
