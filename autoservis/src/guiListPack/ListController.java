@@ -26,7 +26,6 @@ import java.util.ResourceBundle;
 public class ListController implements Initializable {
     private Scene scene;
     private Stage stage;
-    private Parent root;
     @FXML
     private TableView<Record> table;
     @FXML
@@ -43,6 +42,7 @@ public class ListController implements Initializable {
     private TableColumn<Record, String> col_problem;
 
     ObservableList<Record> oblist = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize (URL location, ResourceBundle resources){
@@ -95,4 +95,5 @@ public class ListController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }

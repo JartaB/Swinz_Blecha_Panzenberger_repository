@@ -1,5 +1,7 @@
 package guiAddPack;
 
+import guiListPack.DatAlertBox;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import sample.Database;
 
@@ -27,6 +26,9 @@ public class AddController implements Initializable {
     @FXML private TextField spz_field;
     @FXML private TextField phone_field;
     @FXML private DatePicker date_picker;
+    @FXML private Label name_label;
+    @FXML private Label phone_label;
+    @FXML private Label spz_label;
     Database database=new Database();
     private Scene scene;
     private Stage stage;
@@ -36,7 +38,40 @@ public class AddController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeCas();
         initializeZavada();
-        database.connect();
+        database.connect("select * from objednani");
+        name_field.textProperty().addListener( (observable, oldValue, newValue) -> {
+            if(newValue.length()>60){
+                name_label.setText("Moc znaků!");
+                name_label.setVisible(true);
+            }
+            else if(newValue.matches("[0-9]*")){
+                name_label.setText("Nepiš mi tu čísla!");
+                name_label.setVisible(true);
+            }
+            else name_label.setVisible(false);
+            if (newValue.isEmpty()) name_label.setVisible(false);
+                });
+        phone_field.textProperty().addListener( (observable, oldValue, newValue) -> {
+            if(newValue.matches("[a-z]*")){
+                phone_label.setText("Pouze čísla!");
+                phone_label.setVisible(true);
+            }
+            else if(newValue.length()>9){
+                phone_label.setText("Maximum 9 čísel");
+                phone_label.setVisible(true);
+            }
+            if(newValue.isEmpty()) {
+                phone_label.setVisible(false);
+            }
+        });
+        spz_field.textProperty().addListener( (observable, oldValue, newValue) -> {
+            if(newValue.length()>8){
+                spz_label.setText("Maximum 8 znaků!");
+                spz_label.setVisible(true);
+            }
+            else spz_label.setVisible(false);
+            if(newValue.isEmpty()) spz_label.setVisible(false);
+        });
     }
     public void initializeCas(){
         cas_choice.getItems().add("9:00");
@@ -65,14 +100,26 @@ public class AddController implements Initializable {
         zavada_choice.getItems().add("Brzdy");
         zavada_choice.getItems().add("Karoserie");
     }
+    public boolean checkDate(){
+        String datetime=date_picker.getValue().toString() + " " +cas_choice.getValue().toString()+":00";
+        if(database.checkDate(datetime)>=1) return true;
+        else return false;
+
+    }
     public void insertNewCustomer(){
         String name =name_field.getCharacters().toString();
         String datetime=date_picker.getValue().toString() + " " +cas_choice.getValue().toString();
         String typeOfProblem=zavada_choice.getValue().toString();
         String spz=spz_field.getCharacters().toString();
         String phone=phone_field.getCharacters().toString();
-        database.insert(name,datetime,phone,spz,typeOfProblem);
+        if(checkDate()){
+            DatAlertBox.display("Chyba", "Na tento čas už je někdo objednaný");
+        }
+        else if(!checkDate()) {
+            database.insert(name, datetime, phone, spz, typeOfProblem);
+        }
     }
+
 
     public void switchToList(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../guiListPack/Gui_List.fxml"));

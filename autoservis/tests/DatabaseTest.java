@@ -14,9 +14,15 @@ class DatabaseTest {
     String url = "jdbc:mysql://localhost:3306/autoservis";
     String user = "root";
     String pass = "";
-    @Test
-    void DataNotEmpty() {
 
+    @Test
+    void getConnectionTest() throws SQLException {
+        Connection connection = Database.getConnection();
+        assertEquals(connection != null, true);
+    }
+
+    @Test
+    void dataNotEmpty() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, pass);
@@ -33,9 +39,5 @@ class DatabaseTest {
 
     }
 
-    @Test
-    void getConnectionTest() throws SQLException {
-        Connection connection = Database.getConnection();
-        assertEquals(connection != null, true);
-    }
+
 }
