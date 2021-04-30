@@ -1,3 +1,81 @@
 body{
-    background-color: aqua;
+    background-image: url("background.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    font-family: Helvetica, sans-serif;
+    overflow: hidden;
+    font-weight: bold;
+    font-style: italic;
+    color:white;
+}
+
+/*#dialogue{
+    background-image: url("background.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+}*/
+
+/*h1 {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}*/
+
+#form {
+    background-color: rgba(138, 138, 138, 0.5);
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    color: black;
+}
+
+#typeOfProblem, #time, input[type=date], input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color:  rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    border: none;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#tlacitko {
+    cursor: pointer;
+    width: 30%;
+    padding: 12px 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+}
+#tlacitko:hover {
+    color: black;
+    transition-duration: 0.5s;
+}
+
+label{
+    color: white;
+}
+
+.options{
+    color: black;
 }

@@ -3,11 +3,12 @@
 <head>
     <link rel='stylesheet' href='/styles.css'/>
 </head>
-<body>
-
-<h1>Zápis neproběhl, zvolená doba je obsazena</h1>
-    <form action="/" method="POST">
-        <button type="submit">OUKEJ, ZNOVU</button>
+<body id="dialogue">
+<div id="form">
+<h1>Zápis neproběhl, zvolená doba je již zabraná</h1>
+    <form action="/fail" method="POST">
+        <button type="submit", id="tlacitko">Zpátky</button>
     </form>
+</div>
 </body>
 </html>
