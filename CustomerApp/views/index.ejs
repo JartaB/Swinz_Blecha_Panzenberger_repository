@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/styles.css'/>
+</head>
+<body>
+
+<div id="form">
+    <h1>Formulář pro zápis na autoservis</h1>
+    <form action="/" method="POST">
+        <div>
+            <label for="name">Jméno a příjmení</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="time">Čas</label>
+            <select name="time" id="time">
+                <option value="9:00" class="options">9:00</option>
+                <option value="9:30" class="options">9:30</option>
+                <option value="10:00" class="options">10:00</option>
+                <option value="10:30" class="options">10:30</option>
+                <option value="11:00" class="options">11:00</option>
+                <option value="11:30" class="options">11:30</option>
+                <option value="12:00" class="options">12:00</option>
+                <option value="12:30" class="options">12:30</option>
+                <option value="13:00" class="options">13:00</option>
+                <option value="13:30" class="options">13:30</option>
+                <option value="14:00" class="options">14:00</option>
+                <option value="14:30" class="options">14:30</option>
+                <option value="15:00" class="options">15:00</option>
+                <option value="15:30" class="options">15:30</option>
+                <option value="16:00" class="options">16:00</option>
+                <option value="16:30" class="options">16:30</option>
+                <option value="17:00" class="options">17:00</option>
+                <option value="17:30" class="options">17:30</option>
+            </select>
+        </div>
+        <div>
+            <label for="typeOfProblem">Typ Závady</label>
+            <select name="typeOfProblem" id="typeOfProblem">
+                <option value="Brzdy" class="options">Brzdy</option>
+                <option value="Řízení" class="options">Řízení</option>
+                <option value="Výfuk" class="options">Výfuk</option>
+                <option value="Karoserie" class="options">Karoserie</option>
+            </select>
+        </div>
+        <div>
+            <label for="spz">SPZ</label>
+            <input type="text" id="spz" name="spz" required>
+        </div>
+        <div>
+            <label for="phone">Telefon</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div>
+            <label for="date">Datum:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <button type="submit" id="tlacitko">Zapsat se</button>
+    </form>
+</div>
+</body>
+</html>
