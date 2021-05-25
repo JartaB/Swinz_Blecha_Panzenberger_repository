@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiHomePack.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiHomePack.HomeController">
     <children>
-        <SplitPane dividerPositions="0.11055276381909548" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <SplitPane dividerPositions="0.11055276381909548" orientation="VERTICAL" prefHeight="500.0" prefWidth="800.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="598.0">
                     <children>
-                        <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="43.0" prefWidth="200.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button alignment="CENTER" layoutX="200.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToList" prefHeight="25.0" prefWidth="200.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" prefWidth="200.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="52.0" prefWidth="266.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button alignment="CENTER" layoutX="200.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToList" prefHeight="25.0" prefWidth="200.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="0.0" />
+                        <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="52.0" prefWidth="266.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="589.0">
                <children>
-                  <ImageView fx:id="imgView" fitHeight="204.0" fitWidth="200.0" layoutX="42.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="wel_label" alignment="TOP_LEFT" layoutX="254.0" layoutY="33.0" prefHeight="126.0" prefWidth="308.0" text="Label" wrapText="true">
+                  <Label fx:id="wel_label" alignment="TOP_LEFT" layoutX="300.0" layoutY="33.0" prefHeight="126.0" prefWidth="308.0" text="Hello there" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font></Label>

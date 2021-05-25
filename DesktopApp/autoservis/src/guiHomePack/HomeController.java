@@ -19,7 +19,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ResourceBundle;
 
 
@@ -28,13 +29,20 @@ public class HomeController implements Initializable {
     private Stage stage;
     private Parent root;
 
+
     @FXML private Label wel_label;
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
-            wel_label.setText("Vítejte!\nDnes je:"+ LocalDate.now(
-                    ZoneId.of("CET"))+"\n"+currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond()+"\n");
+            LocalDate today= LocalDate.now(ZoneId.of("CET"));
+            String formattedDate=today.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+            wel_label.setText("Vítejte!\nDnes je: "+ formattedDate +"\n"+currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond()+"\n");
+
         }),
                 new KeyFrame(Duration.seconds(1))
         );

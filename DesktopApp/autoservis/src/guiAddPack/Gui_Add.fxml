@@ -1,34 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiAddPack.AddController">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiAddPack.AddController">
    <children>
-      <SplitPane dividerPositions="0.11055276381909548" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+      <SplitPane dividerPositions="0.11055276381909548" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="500.0" prefWidth="800.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="43.0" prefWidth="200.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button alignment="CENTER" layoutX="200.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToList" prefHeight="25.0" prefWidth="200.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" prefWidth="200.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button alignment="CENTER" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="52.0" prefWidth="266.0" text="Vytvořit objednávku" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button alignment="CENTER" layoutX="264.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToList" prefHeight="52.0" prefWidth="266.0" text="Výpis objednávek" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="0.0" />
+                  <Button alignment="CENTER" layoutX="390.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="52.0" prefWidth="266.0" text="Domů" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="name_field" layoutX="14.0" layoutY="57.0" promptText="Jméno a příjmení" />
-                  <TextField fx:id="spz_field" layoutX="14.0" layoutY="201.0" promptText="SPZ" />
-                  <TextField fx:id="phone_field" layoutX="14.0" layoutY="250.0" promptText="Telefon" />
-                  <ChoiceBox fx:id="cas_choice" layoutX="14.0" layoutY="106.0" prefWidth="150.0" />
-                  <ChoiceBox fx:id="zavada_choice" layoutX="14.0" layoutY="151.0" prefWidth="150.0" />
-                  <DatePicker fx:id="date_picker" layoutX="392.0" layoutY="49.0" prefHeight="96.0" prefWidth="174.0" promptText="Datum" />
+                  <TextField fx:id="name_field" layoutX="26.0" layoutY="78.0" promptText="Jméno a příjmení" AnchorPane.leftAnchor="26.0" />
+                  <TextField fx:id="spz_field" layoutX="25.0" layoutY="259.0" promptText="SPZ" AnchorPane.leftAnchor="25.0" />
+                  <TextField fx:id="phone_field" layoutX="25.0" layoutY="335.0" promptText="Telefon" AnchorPane.leftAnchor="25.0" />
+                  <ChoiceBox fx:id="cas_choice" layoutX="25.0" layoutY="133.0" prefWidth="150.0" AnchorPane.leftAnchor="25.0" />
+                  <ChoiceBox fx:id="zavada_choice" layoutX="25.0" layoutY="193.0" prefWidth="150.0" AnchorPane.leftAnchor="25.0" />
+                  <DatePicker fx:id="date_picker" layoutX="392.0" layoutY="49.0" prefHeight="96.0" prefWidth="174.0" promptText="Datum" AnchorPane.rightAnchor="30.0" />
                   <Button fx:id="obj_button" layoutX="479.0" layoutY="294.0" mnemonicParsing="false" onAction="#insertNewCustomer" prefHeight="50.0" prefWidth="120.0" text="Objednat" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
-                  <Label fx:id="name_label" layoutX="14.0" layoutY="82.0" prefHeight="17.0" prefWidth="150.0" text="" textFill="RED" visible="false" />
-                  <Label fx:id="phone_label" layoutX="14.0" layoutY="275.0" prefHeight="17.0" prefWidth="150.0" textFill="RED" visible="false" />
-                  <Label fx:id="spz_label" layoutX="14.0" layoutY="226.0" prefHeight="17.0" prefWidth="149.0" textFill="RED" visible="false" />
+                  <Label fx:id="name_label" layoutX="184.0" layoutY="82.0" prefHeight="17.0" prefWidth="150.0" text="" textFill="RED" visible="false" AnchorPane.leftAnchor="184.0" />
+                  <Label fx:id="phone_label" layoutX="184.0" layoutY="339.0" prefHeight="17.0" prefWidth="150.0" textFill="RED" visible="false" AnchorPane.leftAnchor="184.0" />
+                  <Label fx:id="spz_label" layoutX="185.0" layoutY="263.0" prefHeight="17.0" prefWidth="149.0" textFill="RED" visible="false" AnchorPane.leftAnchor="185.0" />
+                  <Label layoutX="26.0" layoutY="53.0" prefHeight="17.0" prefWidth="150.0" text="Jméno zákazníka" AnchorPane.leftAnchor="26.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="116.0" text="Čas" AnchorPane.leftAnchor="28.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="169.0" text="Typ závady" AnchorPane.leftAnchor="28.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="237.0" text="SPZ vozidla" AnchorPane.leftAnchor="27.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="308.0" text="Tel. číslo zákazníka" AnchorPane.leftAnchor="27.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="392.0" layoutY="33.0" text="Datum" AnchorPane.rightAnchor="165.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
       </SplitPane>
    </children>
 </Pane>
