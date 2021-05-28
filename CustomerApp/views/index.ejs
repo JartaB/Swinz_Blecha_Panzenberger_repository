@@ -55,6 +55,10 @@
         <div>
             <label for="date">Datum:</label>
             <input type="date" id="date" name="date">
+            <script type="text/javascript">
+                    var today = new Date().toISOString().split('T')[0];
+                    document.getElementsByName("date")[0].setAttribute('min', today);
+            </script>
         </div>
         <button type="submit" id="tlacitko">Zapsat se</button>
     </form>
